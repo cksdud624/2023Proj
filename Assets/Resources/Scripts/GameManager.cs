@@ -115,4 +115,18 @@ public class GameManager : MonoBehaviour//ΩÃ±€≈Ê
         sInstance = null;
         ChangeScene("Game");
     }
+
+    public int getLaps(string name)
+    {
+        for(int i = 0; i < racer.Count; i++)
+        {
+            if (racer[i] == name)
+            {
+                return racertrack[i] + 2;
+            }
+        }
+
+        return 2;
+    }
+
 }
