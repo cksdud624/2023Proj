@@ -6,21 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Resources/Scenes/00_Start.unity
-    guid: 8beca8d379c369342a753739baac8d37
+    path: Assets/Resources/Scenes/FlappyBirdStart.unity
+    guid: 5c62514c5e1733b41b5319467c2e09c8
   - enabled: 1
-    path: Assets/Resources/Scenes/Game.unity
-    guid: ce22d9a7f136ef749ac6b13999e3ee35
-  - enabled: 1
-    path: Assets/Resources/Scenes/99_End.unity
-    guid: 3dbcd4d22f13e2d4fa1dd39ba4f47fce
-  - enabled: 1
-    path: Assets/Resources/Scenes/01_Move.unity
-    guid: 4a95dbe115a3ee242a9d7b6323d5560b
-  - enabled: 1
-    path: Assets/Resources/Scenes/02_Ray.unity
-    guid: c2f1483b6df4c9d4d861b0590ae2381e
-  - enabled: 1
-    path: Assets/Resources/Scenes/04_Camera.unity
-    guid: 08c586b970c68ef40a8fa6b550b9b50b
+    path: Assets/Resources/Scenes/FlappyBird.unity
+    guid: 253a240764e54384c9042906ce4c6206
   m_configObjects: {}

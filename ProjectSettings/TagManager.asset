@@ -4,18 +4,27 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Sphere
+  - GameManager
+  - CharacterSelectController
+  - Gold
+  - ElectricObstacle
+  - FireObstacle
+  - IceObstacle
+  - NormalObstacle
+  - TheGround
+  - Enemy
+  - Projectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Cars
+  - 
   - Water
   - UI
-  - Sphere
-  - Box
-  - Cylinder
-  - Capsule
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -41,4 +50,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4268457967
+    locked: 0
+  - name: Item
+    uniqueID: 2080488447
+    locked: 0
+  - name: NPC
+    uniqueID: 1666067563
+    locked: 0
+  - name: Player
+    uniqueID: 3033781509
+    locked: 0
+  - name: Projectile
+    uniqueID: 271491033
     locked: 0
