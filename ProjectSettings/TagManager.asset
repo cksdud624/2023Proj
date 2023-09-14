@@ -14,6 +14,7 @@ TagManager:
   - TheGround
   - Enemy
   - Projectile
+  - Cloud
   layers:
   - Default
   - TransparentFX

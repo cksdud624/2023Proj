@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cloud2D : MonoBehaviour
 {
+    public delegate bool BoolCustomEvent();
+    public BoolCustomEvent gamePlaying;
     float speed = 10.0f;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +16,7 @@ public class Cloud2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameCenter.Instance().GetPlay() == true)
+        if (gamePlaying.Invoke() == true)
         {
             Move_01();
         }

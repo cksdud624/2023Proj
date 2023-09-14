@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Projectile2D : MonoBehaviour
 {
+    public delegate bool BoolCustomEvent();
+    public BoolCustomEvent gamePlaying;
+
     public float speed = 10.0f;
     void Update()
     {
-        if(GameCenter.Instance().GetPlay() == true)
+        if (gamePlaying.Invoke() == true)
         {
             Move_01();
         }
     }
-
     void Move_01()
     {
         this.transform.position = new Vector2(this.transform.position.x + speed * Time.deltaTime,
