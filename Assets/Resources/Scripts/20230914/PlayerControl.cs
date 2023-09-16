@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
-
+    public event Func<bool> IsPlaying;
     Animation spartanKing;
 
     public AnimationClip IDLE;
@@ -27,8 +28,11 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnimationPlay_4();
-        CharacterControl_Slerp();
+        if (IsPlaying.Invoke() == true)
+        {
+            AnimationPlay_4();
+            CharacterControl_Slerp();
+        }
         //AnimationPlay_1();
     }
 
