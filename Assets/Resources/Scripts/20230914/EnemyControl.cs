@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyControl : MonoBehaviour
 {
     public event Func<bool> IsPlaying;
+    public event Action<int> IncreaseScore;
 
     Animation spartanKing;
     public GameObject objSword = null;
@@ -112,12 +113,8 @@ public class EnemyControl : MonoBehaviour
             spartanKing.CrossFade("diehard", 0.3f);
             Dead = true;
             objSword.SetActive(false);
+            IncreaseScore(100);
         }
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.gameObject.name);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class DefenseGameCenter : MonoBehaviour
 {
@@ -18,8 +18,10 @@ public class DefenseGameCenter : MonoBehaviour
     public GameObject ScoreText;
     public GameObject CubeText;
 
+    int score = 0;
 
     bool NeedToReset = false;
+    bool NeedToResetText = false;
 
     float spawnInterval = 1f;
 
@@ -42,6 +44,7 @@ public class DefenseGameCenter : MonoBehaviour
         for (int i = 0; i < Cube.Length; i++)
         {
             Cube[i].GetComponent<Cube>().ResetCube += SetNeedToReset;
+             Cube[i].GetComponent<Cube>().ResetCubeText += SetNeedToResetText;
         }
         Player.GetComponent<PlayerControl>().IsPlaying += IsPlaying;
     }
@@ -73,6 +76,12 @@ public class DefenseGameCenter : MonoBehaviour
                 NeedToReset = false;
             }
 
+            if(NeedToResetText == true)
+            {
+                ResetCubeText();
+                NeedToResetText = false;
+            }
+
             if(Cube.Length <= 0)
             {
                 gameState = GameState.Result;
@@ -86,6 +95,21 @@ public class DefenseGameCenter : MonoBehaviour
                 SceneManager.LoadScene("DefenseGame");
             }
         }
+    }
+
+    void ResetCubeText()
+    {
+        CubeText.GetComponent<Text>().text = "Cube : " + Cube.Length + "  ";
+    }
+
+    void SetNeedToResetText()
+    {
+        NeedToResetText = true;
+    }
+    void IncreaseScore(int num)
+    {
+        score += num;
+        ScoreText.GetComponent<Text>().text = "  Score : " + score;
     }
 
     void SetNeedToReset()
@@ -122,11 +146,12 @@ public class DefenseGameCenter : MonoBehaviour
         {
             if (gameState == GameState.Play)
             {
-                spawnInterval = Random.Range(1f, 1.1f);
+                spawnInterval = Random.Range(2f, 4f);
                 float spawnPosZ = Cube[Random.Range(0, Cube.Length)].transform.position.z;
                 Vector3 temp = new Vector3(-6f, 0f, spawnPosZ);
                 GameObject newEnemy = Instantiate(Enemy, temp, Enemy.transform.rotation);
                 newEnemy.GetComponent<EnemyControl>().IsPlaying += IsPlaying;
+                newEnemy.GetComponent<EnemyControl>().IncreaseScore += IncreaseScore;
             }
             yield return new WaitForSeconds(spawnInterval);
         }

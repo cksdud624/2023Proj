@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objSword: {fileID: 3960449892828886570}
-  runSpeed: 2
+  runSpeed: 1
 --- !u!1001 &3960449892478869548
 PrefabInstance:
   m_ObjectHideFlags: 0

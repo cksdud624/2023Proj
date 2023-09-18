@@ -6,6 +6,7 @@ using System;
 public class Cube : MonoBehaviour
 {
     public event Action ResetCube;
+    public event Action ResetCubeText;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class Cube : MonoBehaviour
         {
             Destroy(this.gameObject);
             ResetCube.Invoke();
+            ResetCubeText.Invoke();
         }
     }
 
