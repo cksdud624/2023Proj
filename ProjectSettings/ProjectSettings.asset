@@ -156,7 +156,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.sglib.demogame
-    Standalone: unity.DefaultCompany.Flap Up! (Dash Up)
+    Standalone: com.DefaultCompany.2023Proj
     Tizen: com.sglib.demogame
     iPhone: com.sglib.demogame
     tvOS: com.sglib.demogame
