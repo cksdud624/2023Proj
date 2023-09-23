@@ -123,7 +123,7 @@ public class MazeGameCenter : MonoBehaviour
 
             if(leftCube <= 0)
             {
-                //gameState = GameState.Result;
+                gameState = GameState.Result;
             }
         }
         else if(gameState == GameState.Result)
